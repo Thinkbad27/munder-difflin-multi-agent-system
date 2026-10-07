@@ -1,0 +1,112 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="900" viewBox="0 0 1000 900" font-family="Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#4a5568"/>
+    </marker>
+    <marker id="arrowBlue" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#2b6cb0"/>
+    </marker>
+  </defs>
+
+  <rect width="1000" height="900" fill="#ffffff"/>
+
+  <text x="500" y="36" text-anchor="middle" font-size="22" font-weight="700" fill="#1a202c">
+    Munder Difflin Paper Company — Multi-Agent Ordering System
+  </text>
+
+  <!-- Customer Request -->
+  <rect x="380" y="60" width="240" height="50" rx="8" fill="#edf2f7" stroke="#4a5568" stroke-width="1.5"/>
+  <text x="500" y="90" text-anchor="middle" font-size="15" fill="#1a202c">Customer Request (text + date)</text>
+
+  <line x1="500" y1="110" x2="500" y2="140" stroke="#4a5568" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- Orchestrator -->
+  <rect x="330" y="142" width="340" height="60" rx="10" fill="#2b6cb0" stroke="#1a4971" stroke-width="1.5"/>
+  <text x="500" y="167" text-anchor="middle" font-size="16" font-weight="700" fill="#ffffff">Orchestrator (ToolCallingAgent)</text>
+  <text x="500" y="188" text-anchor="middle" font-size="12" fill="#e2e8f0">managed_agents = [quoting, inventory, sales]</text>
+
+  <!-- Numbered delegation arrows -->
+  <line x1="420" y1="202" x2="190" y2="255" stroke="#2b6cb0" stroke-width="1.5" marker-end="url(#arrowBlue)"/>
+  <text x="290" y="222" font-size="13" fill="#2b6cb0" font-weight="700">1</text>
+
+  <line x1="500" y1="202" x2="500" y2="255" stroke="#2b6cb0" stroke-width="1.5" marker-end="url(#arrowBlue)"/>
+  <text x="508" y="228" font-size="13" fill="#2b6cb0" font-weight="700">2</text>
+
+  <line x1="580" y1="202" x2="810" y2="255" stroke="#2b6cb0" stroke-width="1.5" marker-end="url(#arrowBlue)"/>
+  <text x="700" y="222" font-size="13" fill="#2b6cb0" font-weight="700">3</text>
+
+  <!-- Quoting Agent -->
+  <rect x="60" y="258" width="260" height="66" rx="8" fill="#38a169" stroke="#276749" stroke-width="1.5"/>
+  <text x="190" y="282" text-anchor="middle" font-size="14" font-weight="700" fill="#ffffff">quoting_agent</text>
+  <text x="190" y="300" text-anchor="middle" font-size="11" fill="#e6fffa">maps items to catalog,</text>
+  <text x="190" y="314" text-anchor="middle" font-size="11" fill="#e6fffa">prices the order</text>
+
+  <!-- Inventory Agent -->
+  <rect x="370" y="258" width="260" height="66" rx="8" fill="#38a169" stroke="#276749" stroke-width="1.5"/>
+  <text x="500" y="282" text-anchor="middle" font-size="14" font-weight="700" fill="#ffffff">inventory_agent</text>
+  <text x="500" y="300" text-anchor="middle" font-size="11" fill="#e6fffa">checks stock, estimates</text>
+  <text x="500" y="314" text-anchor="middle" font-size="11" fill="#e6fffa">restock timing/orders</text>
+
+  <!-- Sales Agent -->
+  <rect x="680" y="258" width="260" height="66" rx="8" fill="#38a169" stroke="#276749" stroke-width="1.5"/>
+  <text x="810" y="282" text-anchor="middle" font-size="14" font-weight="700" fill="#ffffff">sales_agent</text>
+  <text x="810" y="300" text-anchor="middle" font-size="11" fill="#e6fffa">confirms delivery/cash,</text>
+  <text x="810" y="314" text-anchor="middle" font-size="11" fill="#e6fffa">finalizes or rejects</text>
+
+  <!-- Tool lists -->
+  <line x1="190" y1="324" x2="190" y2="350" stroke="#4a5568" stroke-width="1.2" marker-end="url(#arrow)"/>
+  <rect x="50" y="352" width="280" height="96" rx="6" fill="#f7fafc" stroke="#cbd5e0"/>
+  <text x="190" y="370" text-anchor="middle" font-size="12" font-weight="700" fill="#2d3748">Tools</text>
+  <text x="65" y="388" font-size="11" fill="#2d3748">• find_similar_past_quotes()</text>
+  <text x="65" y="404" font-size="11" fill="#2d3748">   → search_quote_history()</text>
+  <text x="65" y="422" font-size="11" fill="#2d3748">• check_available_items()</text>
+  <text x="65" y="438" font-size="11" fill="#2d3748">   → get_all_inventory()</text>
+
+  <line x1="500" y1="324" x2="500" y2="350" stroke="#4a5568" stroke-width="1.2" marker-end="url(#arrow)"/>
+  <rect x="360" y="352" width="280" height="130" rx="6" fill="#f7fafc" stroke="#cbd5e0"/>
+  <text x="500" y="370" text-anchor="middle" font-size="12" font-weight="700" fill="#2d3748">Tools</text>
+  <text x="375" y="388" font-size="11" fill="#2d3748">• check_stock() → get_stock_level()</text>
+  <text x="375" y="404" font-size="11" fill="#2d3748">• check_full_inventory()</text>
+  <text x="375" y="418" font-size="11" fill="#2d3748">   → get_all_inventory()</text>
+  <text x="375" y="436" font-size="11" fill="#2d3748">• estimate_restock_arrival()</text>
+  <text x="375" y="450" font-size="11" fill="#2d3748">   → get_supplier_delivery_date()</text>
+  <text x="375" y="468" font-size="11" fill="#2d3748">• place_restock_order() → create_transaction()</text>
+
+  <line x1="810" y1="324" x2="810" y2="350" stroke="#4a5568" stroke-width="1.2" marker-end="url(#arrow)"/>
+  <rect x="670" y="352" width="280" height="150" rx="6" fill="#f7fafc" stroke="#cbd5e0"/>
+  <text x="810" y="370" text-anchor="middle" font-size="12" font-weight="700" fill="#2d3748">Tools</text>
+  <text x="685" y="388" font-size="11" fill="#2d3748">• check_cash_health()</text>
+  <text x="685" y="402" font-size="11" fill="#2d3748">   → get_cash_balance()</text>
+  <text x="685" y="418" font-size="11" fill="#2d3748">• get_financial_report()</text>
+  <text x="685" y="432" font-size="11" fill="#2d3748">   → generate_financial_report()</text>
+  <text x="685" y="448" font-size="11" fill="#2d3748">• confirm_delivery_window()</text>
+  <text x="685" y="462" font-size="11" fill="#2d3748">   → get_supplier_delivery_date()</text>
+  <text x="685" y="478" font-size="11" fill="#2d3748">• finalize_sale() → create_transaction()</text>
+
+  <!-- Down to DB -->
+  <line x1="190" y1="448" x2="190" y2="560" stroke="#4a5568" stroke-width="1.2" marker-end="url(#arrow)"/>
+  <line x1="500" y1="482" x2="500" y2="560" stroke="#4a5568" stroke-width="1.2" marker-end="url(#arrow)"/>
+  <line x1="810" y1="502" x2="810" y2="560" stroke="#4a5568" stroke-width="1.2" marker-end="url(#arrow)"/>
+
+  <!-- Database -->
+  <rect x="120" y="562" width="760" height="70" rx="8" fill="#805ad5" stroke="#553c9a" stroke-width="1.5"/>
+  <text x="500" y="590" text-anchor="middle" font-size="15" font-weight="700" fill="#ffffff">SQLite Database (db_engine)</text>
+  <text x="500" y="610" text-anchor="middle" font-size="11" fill="#e9d8fd">tables: transactions · quote_requests · quotes</text>
+
+  <!-- Return path -->
+  <line x1="810" y1="632" x2="810" y2="690" stroke="#dd6b20" stroke-width="1.5" stroke-dasharray="5,4"/>
+  <line x1="810" y1="690" x2="500" y2="690" stroke="#dd6b20" stroke-width="1.5" stroke-dasharray="5,4"/>
+  <line x1="500" y1="690" x2="500" y2="730" stroke="#dd6b20" stroke-width="1.5" stroke-dasharray="5,4" marker-end="url(#arrow)"/>
+  <text x="655" y="682" text-anchor="middle" font-size="11" fill="#dd6b20">agent reports (item, qty, price, date, tx id)</text>
+
+  <!-- Orchestrator synthesis -->
+  <rect x="330" y="732" width="340" height="60" rx="10" fill="#2b6cb0" stroke="#1a4971" stroke-width="1.5"/>
+  <text x="500" y="757" text-anchor="middle" font-size="15" font-weight="700" fill="#ffffff">Orchestrator</text>
+  <text x="500" y="777" text-anchor="middle" font-size="12" fill="#e2e8f0">synthesizes final response</text>
+
+  <line x1="500" y1="792" x2="500" y2="822" stroke="#4a5568" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- Final response -->
+  <rect x="360" y="824" width="280" height="50" rx="8" fill="#edf2f7" stroke="#4a5568" stroke-width="1.5"/>
+  <text x="500" y="854" text-anchor="middle" font-size="14" fill="#1a202c">Response to Customer</text>
+</svg>
